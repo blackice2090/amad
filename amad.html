@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة هاكاثون أمد التفاعلية | أكاديمية طويق</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (IBM Plex Sans Arabic) -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0B132B',       /* كحلي طويق الداكن الأساسي */
+                            lightBg: '#F8F7F4',    /* خلفية أمد الرسمية الدافئة */
+                            card: '#FFFFFF',       /* خلفية البطاقات البيضاء الناصعة */
+                            coral: '#D17A4D',      /* برتقالي أمد النحاسي */
+                            lavender: '#8F8CD4',   /* بنفسجي أمد الفاتح */
+                            blue: '#1B49B8',       /* أزرق طويق المضيء */
+                            accent: '#3A86FF',     /* إضاءة إضافية */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #F8F7F4;
+            color: #0B132B;
+        }
+        /* تأثير الشبكة الهندسية المماثلة لموقع أمد الرسمي */
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(209, 122, 77, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(209, 122, 77, 0.04) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        /* توهجات إضاءة خلفية ناعمة مناسبة للتصميم الفاتح */
+        .glow-bg-1 {
+            background: radial-gradient(circle, rgba(143, 140, 212, 0.12) 0%, rgba(248, 247, 244, 0) 70%);
+        }
+        .glow-bg-2 {
+            background: radial-gradient(circle, rgba(209, 122, 77, 0.09) 0%, rgba(248, 247, 244, 0) 70%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F8F7F4;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E2E8F0;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #CBD5E1;
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-brand-coral selection:text-white custom-scrollbar overflow-x-hidden grid-bg">
+
+    <!-- الإضاءة الخلفية الناعمة -->
+    <div class="absolute top-0 right-0 w-[50vw] h-[50vw] glow-bg-1 -z-10 pointer-events-none"></div>
+    <div class="absolute top-[30vh] left-0 w-[60vw] h-[60vw] glow-bg-2 -z-10 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-10 w-[45vw] h-[45vw] glow-bg-1 -z-10 pointer-events-none"></div>
+
+    <!-- الشريط العلوي (Navbar) -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-brand-lightBg/90 border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- الجانب الأيمن: الشعارات الرسمية والشركاء -->
+            <div class="flex items-center space-x-reverse space-x-4">
+                <div class="flex items-center space-x-reverse space-x-3 bg-white/80 p-2 rounded-xl border border-slate-200/80 shadow-sm">
+                    <!-- شعار أكاديمية طويق الأصلي -->
+                    <a href="https://tuwaiq.edu.sa" target="_blank" class="block">
+                        <img src="https://amad.tuwaiq.edu.sa/assets/tuwaiq-logo.png" alt="Tuwaiq Academy Logo" class="h-8 sm:h-9 w-auto object-contain" />
+                    </a>
+                    
+                    <span class="text-slate-300 font-light">|</span>
+
+                    <!-- شعار هاكاثون أمد الأصلي -->
+                    <a href="https://amad.tuwaiq.edu.sa" target="_blank" class="block">
+                        <img src="https://amad.tuwaiq.edu.sa/assets/amad-logo.png" alt="Amad Hackathon Logo" class="h-8 sm:h-9 w-auto object-contain" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- أزرار التنقل السريع في المنتصف -->
+            <div class="hidden md:flex items-center space-x-reverse space-x-6">
+                <a href="#criteria" class="text-slate-600 hover:text-brand-coral font-semibold text-sm transition">معايير التقييم</a>
+                <a href="#readiness" class="text-slate-600 hover:text-brand-coral font-semibold text-sm transition">مقياس الجاهزية</a>
+                <a href="#tips" class="text-slate-600 hover:text-brand-coral font-semibold text-sm transition">توجيهات العرض</a>
+                <a href="#faq" class="text-slate-600 hover:text-brand-coral font-semibold text-sm transition">الأسئلة الشائعة</a>
+                <a href="#enrichment" class="text-slate-600 hover:text-brand-coral font-semibold text-sm transition">البرامج الإثرائية</a>
+            </div>
+
+            <!-- زر الهاتف المحمول للتنقل -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="p-2 text-slate-500 hover:text-brand-navy transition">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة للجوال -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-lightBg border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#criteria" class="block px-3 py-2 text-slate-600 hover:bg-slate-100 rounded-lg text-base font-medium">معايير التقييم</a>
+            <a href="#readiness" class="block px-3 py-2 text-slate-600 hover:bg-slate-100 rounded-lg text-base font-medium">مقياس الجاهزية</a>
+            <a href="#tips" class="block px-3 py-2 text-slate-600 hover:bg-slate-100 rounded-lg text-base font-medium">توجيهات العرض</a>
+            <a href="#faq" class="block px-3 py-2 text-slate-600 hover:bg-slate-100 rounded-lg text-base font-medium">الأسئلة الشائعة</a>
+            <a href="#enrichment" class="block px-3 py-2 text-slate-600 hover:bg-slate-100 rounded-lg text-base font-medium">البرامج الإثرائية</a>
+        </div>
+    </nav>
+
+    <!-- واجهة البطل (Hero Section) -->
+    <header class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 text-center">
+        <!-- شارة الشراكة التقنية -->
+        <div class="inline-flex items-center space-x-reverse space-x-2 bg-white px-4 py-2 rounded-full border border-slate-200 text-xs sm:text-sm mb-6 shadow-sm">
+            <span class="text-brand-coral font-extrabold">شراكة واعدة</span>
+            <span class="text-slate-300">•</span>
+            <span class="text-slate-600 font-medium">بين مصرف الإنماء وأكاديمية طويق</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight max-w-5xl mx-auto text-brand-navy">
+            <span>هاكاثون <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-coral to-brand-coral/80">أَمَدْ</span> للتقنية المالية</span>
+            <span class="block text-xl sm:text-3xl text-slate-500 mt-4 font-bold">ابتكر حلولاً رقميةً تُحدث فارقاً حقيقياً في القطاع المالي</span>
+        </h1>
+
+        <p class="mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            مرحباً بك في بوابة الإرشاد والتحضير للهاكاثون. تم تجميع وتصفية هذا الدليل بناءً على توجيهات اللجنة والمنظمين الرسمية لتمكينك من صياغة عرضك وتقديمه بأفضل كفاءة ممكنة للوصول إلى منصات التتويج.
+        </p>
+
+        <!-- روابط التفاعل السريع والتحميل -->
+        <div class="mt-10 flex flex-col lg:flex-row justify-center items-center gap-4">
+            <a href="https://tahkeem.tuwaiq.edu.sa/amad/space/" target="_blank" class="w-full lg:w-auto bg-brand-navy hover:bg-slate-900 text-white font-bold px-8 py-4 rounded-xl shadow-lg border border-brand-navy hover:-translate-y-0.5 transition duration-300 flex items-center justify-center space-x-reverse space-x-2">
+                <i data-lucide="upload-cloud" class="w-5 h-5 text-brand-coral"></i>
+                <span>منصة رفع المشاريع 🔗</span>
+            </a>
+            <a href="#readiness" class="w-full lg:w-auto bg-gradient-to-r from-brand-coral to-brand-coral/90 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-brand-coral/15 hover:shadow-brand-coral/30 hover:-translate-y-0.5 transition duration-300 flex items-center justify-center space-x-reverse space-x-2">
+                <i data-lucide="gauge" class="w-5 h-5"></i>
+                <span>اختبر جاهزية مشروعك الآن</span>
+            </a>
+            <a href="https://amad.tuwaiq.edu.sa" target="_blank" class="w-full lg:w-auto bg-white border border-slate-200 text-slate-700 hover:text-brand-navy hover:bg-slate-50 font-bold px-8 py-4 rounded-xl shadow-sm transition duration-300 flex items-center justify-center space-x-reverse space-x-2">
+                <i data-lucide="external-link" class="w-5 h-5"></i>
+                <span>زيارة منصة أمد الرسمية</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- قسم الأوزان ومعايير التقييم (Criteria Section) -->
+    <section id="criteria" class="py-16 bg-white/60 border-y border-slate-200 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-brand-navy">معايير التقييم والأوزان النسبية</h2>
+                <p class="mt-4 text-slate-500">ستة معايير محددة تمثل خارطة النجاح وقنوات الفرز والتأهل للمرحلة النهائية</p>
+            </div>
+
+            <!-- شبكة معايير التقييم مع تمثيل مرئي -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- المعيار 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 relative overflow-hidden group hover:border-brand-coral/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-coral/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-brand-coral/10"></div>
+                    <div class="flex items-start justify-between">
+                        <div class="p-3 bg-brand-coral/10 text-brand-coral rounded-xl">
+                            <i data-lucide="target" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-black text-brand-coral/15">25%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mt-4">الأثر وملاءمة الحل للمشكلة</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">مدى تلبية الحل للمشكلة المطروحة بدقة وتأثيره الإيجابي الملموس على المنظومة والقطاع المالي.</p>
+                </div>
+
+                <!-- المعيار 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 relative overflow-hidden group hover:border-brand-lavender/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-lavender/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-brand-lavender/10"></div>
+                    <div class="flex items-start justify-between">
+                        <div class="p-3 bg-brand-lavender/10 text-brand-lavender rounded-xl">
+                            <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-black text-brand-lavender/15">25%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mt-4">الابتكار</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">الأصالة في الطرح وتجنب التكرار التام، وجلب فكرة غير تقليدية تخلق منفعة حقيقية وملموسة للوطن.</p>
+                </div>
+
+                <!-- المعيار 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 relative overflow-hidden group hover:border-brand-accent/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-accent/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-brand-accent/10"></div>
+                    <div class="flex items-start justify-between">
+                        <div class="p-3 bg-brand-accent/10 text-brand-accent rounded-xl">
+                            <i data-lucide="code-2" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-black text-brand-accent/15">20%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mt-4">الحل التقني</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">المنهجية والأسلوب الفني المتبع لصياغة الفكرة (لاحظ: لا يهدف المعيار لمراجعة جودة الأكواد البرمجية فقط بل هيكلة الحل).</p>
+                </div>
+
+                <!-- المعيار 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 relative overflow-hidden group hover:border-brand-coral/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-coral/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-brand-coral/10"></div>
+                    <div class="flex items-start justify-between">
+                        <div class="p-3 bg-brand-coral/10 text-brand-coral rounded-xl">
+                            <i data-lucide="trending-up" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-black text-brand-coral/15">15%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mt-4">الاستدامة وقابلية التوسع</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">إمكانية بقاء الفكرة كحل عملي وفعال على المدى الطويل، وتوافقها مع الخطط التوسعية والقدرة على الانتشار السلس.</p>
+                </div>
+
+                <!-- المعيار 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 relative overflow-hidden group hover:border-brand-lavender/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-lavender/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-brand-lavender/10"></div>
+                    <div class="flex items-start justify-between">
+                        <div class="p-3 bg-brand-lavender/10 text-brand-lavender rounded-xl">
+                            <i data-lucide="smartphone" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-black text-brand-lavender/15">10%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mt-4">تجربة المستخدم</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">سهولة، بساطة، وجودة تصميم الواجهات، واستجابة التدفقات لخدمة متطلبات ورغبات المستخدم بأقل تعقيد.</p>
+                </div>
+
+                <!-- المعيار 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 relative overflow-hidden group hover:border-brand-accent/50 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-accent/5 rounded-bl-full pointer-events-none transition-all group-hover:bg-brand-accent/10"></div>
+                    <div class="flex items-start justify-between">
+                        <div class="p-3 bg-brand-accent/10 text-brand-accent rounded-xl">
+                            <i data-lucide="presentation" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-4xl font-black text-brand-accent/15">5%</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-navy mt-4">وضوح العرض والإجابة</h3>
+                    <p class="text-slate-500 text-sm mt-2 leading-relaxed">جودة وكفاءة تقديم العرض ومقدار دقة إجابة الفريق على استفسارات لجنة التحكيم بوضوح وثقة.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم مستشار وجاهزية العرض التفاعلي (Readiness Simulator) -->
+    <section id="readiness" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- الجانب الأيمن: مدخلات تفاعلية للمشروع -->
+                <div class="lg:col-span-7 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <h2 class="text-2xl font-bold text-brand-navy flex items-center space-x-reverse space-x-2">
+                        <i data-lucide="sparkles" class="text-brand-coral w-6 h-6"></i>
+                        <span>مقياس ومُعزّز جاهزية العرض التقديمي</span>
+                    </h2>
+                    <p class="text-slate-500 text-sm mt-2">اختبر حالة مشروعك الحالي وسنقدم لك توصيات فورية لزيادة وزنك في التقييم.</p>
+                    
+                    <form id="readiness-form" class="mt-8 space-y-6" onsubmit="event.preventDefault();">
+                        
+                        <!-- 1. عدد أعضاء الفريق -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">حجم فريق العمل:</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-lavender rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <div class="flex items-center space-x-reverse space-x-3">
+                                        <i data-lucide="user" class="text-brand-lavender w-5 h-5"></i>
+                                        <span class="text-slate-700 font-medium text-sm">فردي (عضو واحد)</span>
+                                    </div>
+                                    <input type="radio" name="team_size" value="single" class="accent-brand-lavender" checked>
+                                </label>
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-coral rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <div class="flex items-center space-x-reverse space-x-3">
+                                        <i data-lucide="users" class="text-brand-coral w-5 h-5"></i>
+                                        <span class="text-slate-700 font-medium text-sm">فريق (عضوين فأكثر)</span>
+                                    </div>
+                                    <input type="radio" name="team_size" value="multi" class="accent-brand-coral">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 2. جاهزية النموذج الأولي -->
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-700 mb-2">
+                                <span>جاهزية النموذج الأولي (Prototype) الحالي:</span>
+                                <span id="readiness-pct-label" class="text-brand-coral font-bold">10%</span>
+                            </div>
+                            <input type="range" id="prototype-readiness" min="0" max="100" value="10" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-coral">
+                            <p class="text-xs text-slate-400 mt-2">اسحب لتحديد النسبة الحالية لعملية إعداد النموذج.</p>
+                        </div>
+
+                        <!-- 3. البرمجة بالأكواد (Frontend) -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">هل صممت الواجهات بالأكواد البرمجية (Frontend)؟</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-accent rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <span class="text-slate-700 font-medium text-sm">نعم، قمت بالبرمجة</span>
+                                    <input type="radio" name="has_code" value="yes" class="accent-brand-accent">
+                                </label>
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-accent rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <span class="text-slate-700 font-medium text-sm">لا، واجهات فقط (UI/UX)</span>
+                                    <input type="radio" name="has_code" value="no" class="accent-brand-accent" checked>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 4. التحديات التشريعية والشركاء -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">هل فكرتك مستوحاة من الخارج وتواجه تحديات تشريعية سعودية؟</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-coral rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <span class="text-slate-700 font-medium text-sm">نعم، هناك تحديات</span>
+                                    <input type="radio" name="reg_challenge" value="yes" class="accent-brand-coral" checked>
+                                </label>
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-coral rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <span class="text-slate-700 font-medium text-sm">لا، متوافقة تماماً</span>
+                                    <input type="radio" name="reg_challenge" value="no" class="accent-brand-coral">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 5. تشابه الأفكار والتكرار -->
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">هل الفكرة مكررة أو تتشابه مع مشاريع سابقة بنظرك?</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-lavender rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <span class="text-slate-700 font-medium text-sm">نعم (تشابه مع حلول أخرى)</span>
+                                    <input type="radio" name="has_similarity" value="yes" class="accent-brand-lavender" checked>
+                                </label>
+                                <label class="border border-slate-200 bg-[#FBFBFA] hover:border-brand-lavender rounded-xl p-4 flex items-center justify-between cursor-pointer transition">
+                                    <span class="text-slate-700 font-medium text-sm">لا (مبتكرة كلياً)</span>
+                                    <input type="radio" name="has_similarity" value="no" class="accent-brand-lavender">
+                                </label>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- الجانب الأيسر: لوحة النتائج الإرشادية والتوصيات التلقائية -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-lg sticky top-24">
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-base font-bold text-brand-navy">نسبة جاهزية العرض المتوقعة</h3>
+                        <p class="text-xs text-slate-500 mt-1">يتم التحديث فورياً بناءً على إجاباتك ونموذج التقييم الحقيقي</p>
+                    </div>
+
+                    <!-- الرسم التوضيحي للجاهزية بسيركل SVG مخصص ومطور -->
+                    <div class="relative w-44 h-44 mx-auto flex items-center justify-center">
+                        <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                            <!-- دائرة خلفية -->
+                            <circle cx="50" cy="50" r="40" stroke="#F1F5F9" stroke-width="8" fill="transparent"></circle>
+                            <!-- دائرة ملونة بالجاهزية -->
+                            <circle id="gauge-circle" cx="50" cy="50" r="40" stroke="#D17A4D" stroke-width="8" fill="transparent"
+                                    stroke-dasharray="251.2" stroke-dashoffset="200" stroke-linecap="round" class="transition-all duration-500"></circle>
+                        </svg>
+                        <div class="absolute text-center animate-fade-in">
+                            <span id="gauge-percentage" class="text-3xl font-black text-brand-navy">75%</span>
+                            <span class="block text-[10px] uppercase tracking-widest text-slate-400 font-bold mt-1">معدل التأثير</span>
+                        </div>
+                    </div>
+
+                    <!-- التوصيات الاستراتيجية المباشرة (تتغير بالـ JS) -->
+                    <div class="mt-8 space-y-4">
+                        <h4 class="text-sm font-bold text-slate-700 border-b border-slate-100 pb-2 flex items-center space-x-reverse space-x-2">
+                            <i data-lucide="bookmark-check" class="text-brand-coral w-4 h-4"></i>
+                            <span>توصيات مُخصّصة لملف عرضك:</span>
+                        </h4>
+                        
+                        <div id="recommendations-container" class="space-y-3 max-h-[220px] overflow-y-auto custom-scrollbar pr-1">
+                            <!-- سيتم وضع التوصيات التفاعلية هنا عبر جافا سكريبت -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم دليل العرض التقديمي الموحد والتوجيهات الذهبية (Pitching Tips) -->
+    <section id="tips" class="py-16 bg-white/60 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-brand-navy">توجيهات واستراتيجيات العرض الذهبية</h2>
+                <p class="mt-4 text-slate-500">نصائح من المنظمين لتفادي الأخطاء التي تقع فيها الفرق وإبراز مشروعك بأبهى حلة</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- التوجيه الأول -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex space-x-reverse space-x-4 shadow-sm">
+                    <div class="flex-shrink-0 p-3 bg-brand-coral/10 text-brand-coral rounded-xl h-12 w-12 flex items-center justify-center">
+                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-navy">لا تعتذر ولا تسرد النواقص!</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                            تجنب تماماً إشعار لجنة التحكيم بضيق الوقت أو عدم قدرتك على تنفيذ أي جزئية (مثل: "لم يسعفنا الوقت لبنائه"). <strong>اعرض ما لديك بثقة وبأفضل صورة ممكنة</strong>، ولا تبرر النواقص؛ فاللجنة لن تبحث عنها إذا نجحت في إبهارهم بما قمت بإنجازه بالفعل.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- التوجيه الثاني -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex space-x-reverse space-x-4 shadow-sm">
+                    <div class="flex-shrink-0 p-3 bg-brand-lavender/10 text-brand-lavender rounded-xl h-12 w-12 flex items-center justify-center">
+                        <i data-lucide="milestone" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-navy">خارطة الطريق هي طوق النجاة</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                            إذا لم تصل جاهزية النموذج الأولي لمستويات متقدمة، قم ببناء <strong>خارطة طريق تنفيذية بالتواريخ والخطط المحددة</strong> لإيصالها إلى 100% مستقبلاً. هذا الإثبات يوضح جديتك وذكاءك في التخطيط ويرفع درجتك في التقييم.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- التوجيه الثالث -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex space-x-reverse space-x-4 shadow-sm">
+                    <div class="flex-shrink-0 p-3 bg-brand-accent/10 text-brand-accent rounded-xl h-12 w-12 flex items-center justify-center">
+                        <i data-lucide="percent" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-navy">الـ60% المكررة واللمسة التنافسية</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                            من الطبيعي جداً تكرار الأفكار في الهاكاثون بنسبة تصل لـ 60-70%. سر النجاح لا يقتصر على ندرة الفكرة، بل في <strong>التركيز على الميزة التنافسية واللمسة الخاصة</strong> التي ميزت طرحك، ومعالجتك للمشكلة مقارنة بالآخرين.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- التوجيه الرابع -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex space-x-reverse space-x-4 shadow-sm">
+                    <div class="flex-shrink-0 p-3 bg-brand-coral/10 text-brand-coral rounded-xl h-12 w-12 flex items-center justify-center">
+                        <i data-lucide="handshake" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-brand-navy">التشريعات وعقبات التنظيم</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                            صعوبة أو غياب التشريعات القانونية والرقابية للحل لن تتسبب أبداً في استبعاد مشروعك. بدلاً من الاستسلام، استعرض في عرضك <strong>الشركاء والجهات الاستراتيجية الموصى بها</strong> لمساعدتك في تخطي العقبة وضع شعاراتهم كجزء من خطتك.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- قائمة الفحص قبل العرض (Interactive Checklist) -->
+            <div class="mt-12 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <h3 class="text-xl font-bold text-brand-navy flex items-center space-x-reverse space-x-2 mb-6">
+                    <i data-lucide="check-square" class="text-brand-coral"></i>
+                    <span>قائمة الفحص والمراجعة السريعة قبل الوقوف أمام لجنة التحكيم:</span>
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <label class="flex items-start space-x-reverse space-x-3 p-3 bg-[#FBFBFA] rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer select-none transition">
+                        <input type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-coral focus:ring-brand-coral">
+                        <span class="text-sm text-slate-600 leading-relaxed font-medium">استعرضنا الواجهات بصورة احترافية دون الحاجة لكتابة كود معقد.</span>
+                    </label>
+                    <label class="flex items-start space-x-reverse space-x-3 p-3 bg-[#FBFBFA] rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer select-none transition">
+                        <input type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-coral focus:ring-brand-coral">
+                        <span class="text-sm text-slate-600 leading-relaxed font-medium">قمنا ببناء خارطة طريق (Roadmap) واضحة بالتواريخ لتصل فكرتنا لـ100%.</span>
+                    </label>
+                    <label class="flex items-start space-x-reverse space-x-3 p-3 bg-[#FBFBFA] rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer select-none transition">
+                        <input type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-coral focus:ring-brand-coral">
+                        <span class="text-sm text-slate-600 leading-relaxed font-medium">قمنا بذكر الشركاء المقترحين لمواجهة أي تحديات تنظيمية أو تشريعية.</span>
+                    </label>
+                    <label class="flex items-start space-x-reverse space-x-3 p-3 bg-[#FBFBFA] rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer select-none transition">
+                        <input type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-coral focus:ring-brand-coral">
+                        <span class="text-sm text-slate-600 leading-relaxed font-medium">حددنا بوضوح ميزتنا التنافسية الفارقة والفريدة عن الأفكار الشبيهة.</span>
+                    </label>
+                    <label class="flex items-start space-x-reverse space-x-3 p-3 bg-[#FBFBFA] rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer select-none transition">
+                        <input type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-coral focus:ring-brand-coral">
+                        <span class="text-sm text-slate-600 leading-relaxed font-medium">تأكدنا من عدم ذكر أي مبررات أو أعذار متعلقة بضيق الوقت للجنة.</span>
+                    </label>
+                    <label class="flex items-start space-x-reverse space-x-3 p-3 bg-[#FBFBFA] rounded-xl border border-slate-200 hover:border-slate-300 cursor-pointer select-none transition">
+                        <input type="checkbox" class="mt-1 rounded border-slate-300 bg-white text-brand-coral focus:ring-brand-coral">
+                        <span class="text-sm text-slate-600 leading-relaxed font-medium">سجلنا في اللقاءات الإثرائية لرفع الوعي المالي والفني للمشروع.</span>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم الأسئلة الشائعة (FAQ Section) -->
+    <section id="faq" class="py-16 bg-white/40 border-b border-slate-200 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-extrabold text-brand-navy">أبرز الأسئلة الشائعة</h2>
+                <p class="mt-4 text-slate-500 text-sm">كل ما ترغب بمعرفته حول الأنشطة والمواعيد وهيكلية الهاكاثون بالتفصيل</p>
+            </div>
+
+            <!-- أكورديون الأسئلة الشائعة التفاعلي -->
+            <div class="space-y-4">
+                
+                <!-- سؤال 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-coral/10 text-brand-coral rounded-lg">
+                                <i data-lucide="help-circle" class="w-4 h-4"></i>
+                            </span>
+                            <span>اللقاءات الإثرائية عن بُعد أم حضوري؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        جميع اللقاءات الإثرائية مخصصة للمشاركين ويتم تقديمها بالكامل <strong class="text-brand-coral font-bold">عن بُعد</strong> لراحتكم وتسهيل عملية المتابعة.
+                    </div>
+                </div>
+
+                <!-- سؤال 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-lavender/10 text-brand-lavender rounded-lg">
+                                <i data-lucide="clock" class="w-4 h-4"></i>
+                            </span>
+                            <span>في أي ساعة تبدأ اللقاءات؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        تبث اللقاءات يومياً من الساعة <strong class="text-brand-navy font-bold">7:00 مساءً حتى الساعة 8:00 مساءً</strong> بتوقيت المملكة العربية السعودية.
+                    </div>
+                </div>
+
+                <!-- سؤال 3 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-accent/10 text-brand-accent rounded-lg">
+                                <i data-lucide="calendar" class="w-4 h-4"></i>
+                            </span>
+                            <span>ما هي الأيام المحددة لإقامة اللقاءات؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        تبدأ اللقاءات الإثرائية من تاريخ <strong class="text-brand-navy font-bold">5 يوليو وتستمر حتى تاريخ 13 يوليو</strong>.
+                    </div>
+                </div>
+
+                <!-- سؤال 4 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-coral/10 text-brand-coral rounded-lg">
+                                <i data-lucide="map" class="w-4 h-4"></i>
+                            </span>
+                            <span>أين ستكون اللقاءات؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        يتم بث اللقاءات التفاعلية بصورة أساسية ومباشرة في قسم <strong class="text-brand-coral font-bold">Live Stage</strong> على منصة سيرفر الديسكورد (Discord) الرسمي للهاكاثون.
+                    </div>
+                </div>
+
+                <!-- سؤال 5 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-lavender/10 text-brand-lavender rounded-lg">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                            </span>
+                            <span>هل حضور اللقاءات إلزامي للجميع؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        لا، حضور اللقاءات <strong class="text-brand-lavender font-bold">اختياري وليس إلزامياً</strong>، ولكنه مهم ومستحسن للغاية لإثراء فكرتك وضمان مطابقتها لتطلعات اللجنة.
+                    </div>
+                </div>
+
+                <!-- سؤال 6 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-accent/10 text-brand-accent rounded-lg">
+                                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            </span>
+                            <span>ما الهدف الحقيقي من هذه اللقاءات الإثرائية؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        تساعدك اللقاءات على تحقيق غايتين استراتيجيتين:
+                        <ul class="list-disc list-inside mt-2 space-y-1.5 text-slate-500 font-semibold text-xs sm:text-sm">
+                            <li>التعرف على مسارات وأهداف الهاكاثون ومعايير فرز المشاريع بدقة أفضل.</li>
+                            <li>استكشاف وتطبيق أدوات وتقنيات مالية جديدة تساعد على تسريع تنفيذ النموذج الأولي لمشروعك.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- سؤال 7 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-coral/10 text-brand-coral rounded-lg">
+                                <i data-lucide="bell" class="w-4 h-4"></i>
+                            </span>
+                            <span>متى يتم إعلان المتأهلين للمرحلة النهائية؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        بحسب التوجه والبيان المذكور في اللقاء التعريفي، يتم الفرز النهائي وإعلان قائمة المتأهلين <strong class="text-brand-coral font-bold">خلال يومين</strong> من الفرز الأولي.
+                    </div>
+                </div>
+
+                <!-- سؤال 8 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-lavender/10 text-brand-lavender rounded-lg">
+                                <i data-lucide="award" class="w-4 h-4"></i>
+                            </span>
+                            <span>متى موعد الهاكاثون الحضوري؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        تقام فعاليات الهاكاثون الحضورية النهائية في أيام <strong class="text-brand-navy font-bold">16، 17، و 18 يوليو</strong> (ابتداءً من يوم الخميس).
+                    </div>
+                </div>
+
+                <!-- سؤال 9 -->
+                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 shadow-sm hover:border-slate-300">
+                    <button class="faq-toggle w-full px-6 py-5 flex items-center justify-between text-right text-brand-navy font-bold text-base sm:text-lg focus:outline-none">
+                        <div class="flex items-center space-x-reverse space-x-3">
+                            <span class="p-1.5 bg-brand-accent/10 text-brand-accent rounded-lg">
+                                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            </span>
+                            <span>أين سيكون مقر الهاكاثون الحضوري؟</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 border-t border-slate-100 pt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                        ستحتضن الفعاليات النهائية والتتويج في مقر <strong class="text-brand-navy font-bold">الكراج في مدينة الرياض</strong>.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم البرامج الإثرائية والتسجيل (Enrichment Section) -->
+    <section id="enrichment" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold text-brand-navy">البرامج الإثرائية المصاحبة</h2>
+                <p class="mt-4 text-slate-500">لقاءات وبرامج ثرية مصممة خصيصاً لمشاركين الهاكاثون وللجمهور الخارجي المهتم</p>
+            </div>
+
+            <!-- محول التبويب التفاعلي للبرامج -->
+            <div class="flex justify-center mb-8">
+                <div class="bg-slate-200/80 p-1.5 rounded-xl border border-slate-300/60 inline-flex">
+                    <button id="tab-inside" class="px-6 py-2.5 rounded-lg text-sm font-bold transition duration-300 bg-brand-coral text-white shadow-md">
+                        مشاركين الهاكاثون (عن بعد)
+                    </button>
+                    <button id="tab-outside" class="px-6 py-2.5 rounded-lg text-sm font-semibold transition duration-300 text-slate-600 hover:text-brand-navy">
+                        لخارج المشاركين (حضورياً)
+                    </button>
+                </div>
+            </div>
+
+            <!-- بطاقات تفاصيل البرامج -->
+            <div class="max-w-4xl mx-auto">
+                <!-- محتوى المشاركين (عن بعد) -->
+                <div id="content-inside" class="bg-white p-8 rounded-3xl border border-slate-200 relative overflow-hidden shadow-sm">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-coral/5 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center space-x-reverse space-x-4 mb-6">
+                        <div class="p-3 bg-brand-coral/10 text-brand-coral rounded-xl">
+                            <i data-lucide="video" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-navy">لقاءات تطويرية افتراضية</h3>
+                            <p class="text-xs text-brand-coral font-bold">مخصصة للفرق المقبولة في الهاكاثون</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        سواءً كانت مشاركتك فردية أو مع فريق، يتم تقديم جميع الأنشطة واللقاءات التوجيهية وتتبع المشاريع بشكل كامل <strong>عن بعد</strong> لراحتكم وتسهيل عملية التطوير والفرز السريع.
+                    </p>
+                    <div class="bg-[#FBFBFA] p-4 rounded-xl border border-slate-200 mb-6">
+                        <h4 class="text-sm font-bold text-brand-navy flex items-center space-x-reverse space-x-2">
+                            <i data-lucide="calendar" class="w-4 h-4 text-brand-coral"></i>
+                            <span>تأكيد المواعيد:</span>
+                        </h4>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed font-semibold">
+                            الفرز النهائي سيُعلن خلال <strong>يومين</strong>، وسيتم إبلاغ المقبولين مباشرة للتجهيز وحجز السفر إلى الرياض لنهائيات الهاكاثون.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center justify-between border-t border-slate-100 pt-6">
+                        <span class="text-xs text-slate-400">ملاحظة: تواصل مستمر عبر سيرفر ديسكورد الرسمي ورسائل SMS.</span>
+                        <a href="https://amad.tuwaiq.edu.sa" target="_blank" class="w-full sm:w-auto bg-brand-coral text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-coral/90 transition text-center flex items-center justify-center space-x-reverse space-x-2 text-sm shadow-md shadow-brand-coral/15">
+                            <i data-lucide="bell" class="w-4 h-4"></i>
+                            <span>تفقّد لوحة التحكم في أمد</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- محتوى خارج المشاركين (حضورياً) - مخفي افتراضياً -->
+                <div id="content-outside" class="hidden bg-white p-8 rounded-3xl border border-slate-200 relative overflow-hidden shadow-sm">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-lavender/5 rounded-bl-full pointer-events-none"></div>
+                    <div class="flex items-center space-x-reverse space-x-4 mb-6">
+                        <div class="p-3 bg-brand-lavender/10 text-brand-lavender rounded-xl">
+                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-brand-navy">حضور لقاءات ومحاضرات مباشرة</h3>
+                            <p class="text-xs text-brand-lavender font-bold">مفتوح للجميع للتسجيل عبر موقع أمد</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                        إذا لم يحالفك الحظ بالمشاركة بالهاكاثون، يمكنك الاستفادة من اللقاءات المباشرة <strong>حضورياً</strong> لرفع حصيلتك المعرفية حول ريادة الأعمال التقنية وبناء مشاريع التقنية المالية الفريدة.
+                    </p>
+                    <div class="bg-[#FBFBFA] p-4 rounded-xl border border-slate-200 mb-6">
+                        <h4 class="text-sm font-bold text-brand-navy flex items-center space-x-reverse space-x-2">
+                            <i data-lucide="info" class="w-4 h-4 text-brand-lavender"></i>
+                            <span>طريقة التسجيل المجاني والمشاركة:</span>
+                        </h4>
+                        <ol class="text-xs text-slate-500 mt-2 list-decimal list-inside space-y-1 font-medium">
+                            <li>توجه مباشرة إلى موقع <strong>أمد (amad.tuwaiq.edu.sa)</strong>.</li>
+                            <li>اختر قسم <strong>البرنامج الإثرائي</strong> من القائمة الرئيسية.</li>
+                            <li>اضغط على <strong>اللقاءات</strong> المتاحة.</li>
+                            <li>سجل بياناتك واستعد للحضور الميداني المباشر.</li>
+                        </ol>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center justify-between border-t border-slate-100 pt-6">
+                        <span class="text-xs text-slate-400">المقاعد محدودة للتسجيل الحضوري المباشر.</span>
+                        <a href="https://amad.tuwaiq.edu.sa" target="_blank" class="w-full sm:w-auto bg-brand-lavender text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-lavender/90 transition text-center flex items-center justify-center space-x-reverse space-x-2 text-sm shadow-md shadow-brand-lavender/15">
+                            <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+                            <span>تسجيل حضور للقاء الآن</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- الفوتر الأنيق (Footer) -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6 border-b border-slate-100 pb-8">
+                <!-- الأيقونة والشعارات المجمعة في الفوتر -->
+                <div class="flex items-center space-x-reverse space-x-3">
+                    <img src="https://amad.tuwaiq.edu.sa/assets/amad-logo.png" alt="Amad Logo" class="h-8 w-auto object-contain" />
+                    <span class="text-slate-300">|</span>
+                    <img src="https://amad.tuwaiq.edu.sa/assets/tuwaiq-logo.png" alt="Tuwaiq Logo" class="h-8 w-auto object-contain" />
+                </div>
+                <!-- معلومات الشركاء -->
+                <p class="text-sm text-slate-500 font-medium">
+                    مبادرة تقنية تم إعدادها بالتعاون والشراكة بين <strong>مصرف الإنماء</strong> و<strong>أكاديمية طويق</strong>.
+                </p>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400 font-medium">
+                <div class="text-right sm:text-right">
+                    <p>© ٢٠٢٦ بوابة هاكاثون أمد التفاعلية. جميع الحقوق محفوظة.</p>
+                    <p class="text-[10px] text-slate-400/80 mt-1 font-normal">هذه المعلومات تم تجميعها وتلخيصها من حضور اللقاءات التعريفية، مجتمع الديسكورد الرسمي، وبعض التجارب السابقة لتكون دليلاً استرشادياً تفاعلياً.</p>
+                </div>
+                <div class="flex space-x-reverse space-x-4">
+                    <a href="https://amad.tuwaiq.edu.sa" target="_blank" class="hover:text-slate-600 transition">موقع أمد</a>
+                    <a href="https://tuwaiq.edu.sa" target="_blank" class="hover:text-slate-600 transition">أكاديمية طويق</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- منطق التفاعل جافا سكريبت بالكامل (Interactive Logic) -->
+    <script>
+        // تهيئة أيقونات لوسيد
+        lucide.createIcons();
+
+        // 1. منطق القائمة المنسدلة للجوال
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // إغلاق القائمة التلقائي عند الضغط على أي رابط بداخلها
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault(); // منع القفز الافتراضي المزعج
+                const targetId = link.getAttribute('href');
+                
+                // إخفاء القائمة أولاً
+                mobileMenu.classList.add('hidden');
+                
+                // التمرير السلس بعد إخفاء القائمة بجزء من الثانية لتحديث الأبعاد
+                setTimeout(() => {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            });
+        });
+
+        // 2. منطق تبديل البرامج الإثرائية (Tabs)
+        const tabInside = document.getElementById('tab-inside');
+        const tabOutside = document.getElementById('tab-outside');
+        const contentInside = document.getElementById('content-inside');
+        const contentOutside = document.getElementById('content-outside');
+
+        tabInside.addEventListener('click', () => {
+            tabInside.classList.remove('text-slate-600', 'hover:text-slate-200');
+            tabInside.classList.add('bg-brand-coral', 'text-white', 'shadow-md');
+            tabOutside.classList.remove('bg-brand-coral', 'text-white', 'shadow-md');
+            tabOutside.classList.add('text-slate-600', 'hover:text-slate-200');
+
+            contentInside.classList.remove('hidden');
+            contentOutside.classList.add('hidden');
+        });
+
+        tabOutside.addEventListener('click', () => {
+            tabOutside.classList.remove('text-slate-600', 'hover:text-slate-200');
+            tabOutside.classList.add('bg-brand-coral', 'text-white', 'shadow-md');
+            tabInside.classList.remove('bg-brand-coral', 'text-white', 'shadow-md');
+            tabInside.classList.add('text-slate-600', 'hover:text-slate-200');
+
+            contentOutside.classList.remove('hidden');
+            contentInside.classList.add('hidden');
+        });
+
+        // 3. منطق مقياس وجاهزية العرض التفاعلي الذكي (Readiness Simulator)
+        const readinessForm = document.getElementById('readiness-form');
+        const prototypeSlider = document.getElementById('prototype-readiness');
+        const readinessPctLabel = document.getElementById('readiness-pct-label');
+        const gaugePercentage = document.getElementById('gauge-percentage');
+        const gaugeCircle = document.getElementById('gauge-circle');
+        const recsContainer = document.getElementById('recommendations-container');
+
+        // مصفوفة التوصيات المبنية بالكامل على تفريغ الفيديو
+        const allRecs = {
+            singleTeam: {
+                title: "مشاركة فردية (مسموحة وممتازة)",
+                desc: "مشاركتك كعضو واحد مقبولة تماماً، ولن تؤثر على تقييم اللجنة. ولكن تذكر أن اللجنة تُحبذ مشاركة عضوين لزيادة إثراء النقاش؛ تأكد من تغطية الجانب الفني والتسويقي بنفسك أثناء الإلقاء بثقة.",
+                type: "info",
+                icon: "user"
+            },
+            multiTeam: {
+                title: "فريق متكامل ومتجانس",
+                desc: "مشاركة الفرق المتعددة تثري المشروع. تأكد من توزيع الأدوار بوضوح أمام لجنة التحكيم لتبين كفاءة أعضاء الفريق في سد احتياجات المنتج المالية والتقنية.",
+                type: "success",
+                icon: "users"
+            },
+            lowPrototype: {
+                title: "نموذج أولي منخفض الجاهزية (يحتاج خطة زمنية)",
+                desc: "جاهزية مشروعك منخفضة حالياً، لكن تذكر: لا تعتذر للجنة التحكيم! بل قم بوضع شريحة مخصصة للـ (Roadmap) تحتوي على خطوات وتواريخ واضحة للوصول بالمنتج إلى 100%.",
+                type: "warning",
+                icon: "milestone"
+            },
+            highPrototype: {
+                title: "نموذج أولي ممتاز ومتقدم",
+                desc: "جاهزية رائعة للنموذج! استثمر ذلك في إقناع اللجنة وعرض تدفقات تجربة المستخدم (UI/UX) بشكل حي وتفاعلي لجني أعلى درجة ممكنة في التقييم.",
+                type: "success",
+                icon: "check-circle"
+            },
+            hasCode: {
+                title: "واجهات مبرمجة برمجياً",
+                desc: "رائع جداً أنك قمت ببرمجة الواجهات. تذكر فقط أن التقييم النهائي لا يحتوي على معيار للـ Technical Code البحت؛ لذا ركز جهدك الأكبر على جودة الأفكار والتصميم.",
+                type: "info",
+                icon: "code"
+            },
+            noCode: {
+                title: "الاكتفاء بتصميم واجهات (UI/UX - مسموح به)",
+                desc: "يمكنك الاكتفاء التام بنموذج مصمم (Figma/Adobe XD)؛ حيث أكدت اللجنة أن التقييم النهائي لا يركز على المهارة البرمجية المباشرة (Frontend) بقدر جودة فكرتك وجاهزية العرض.",
+                type: "success",
+                icon: "palette"
+            },
+            regChallenge: {
+                title: "مواجهة عقبة تشريعية سعودية",
+                desc: "العقبات التشريعية لن تستبعد فكرتك المبتكرة! بدلاً من ذلك، وضح للجنة ماهية الجهات الحكومية أو الشركاء المقترحين لمساعدتك في تخطي العقبة، وضع شعاراتهم في عرضك وتبيين رغبتك بالدعم والتواصل معهم.",
+                type: "warning",
+                icon: "alert-triangle"
+            },
+            noRegChallenge: {
+                title: "توافق تنظيمي متكامل",
+                desc: "تسهيل عملية التشريعات يمنح مشروعك ميزة التنفيذ السريع. احرص على إبراز مدى سهولة دخول مشروعك للسوق التقني المالي السعودي بأقل قدر من العوائق.",
+                type: "success",
+                icon: "check"
+            },
+            similarityWarning: {
+                title: "الفكرة مكررة أو شبيهة بحلول أخرى (طبيعي جداً)",
+                desc: "تشابه الأفكار بنسبة 60% إلى 70% هو أمر معتاد بالهاكاثونات. السر الحقيقي يكمن في تركيزك التام على 'الميزة التنافسية واللمسة الفريدة' التي ميزت طرحك وطريقتك لتنفيذ الفكرة.",
+                type: "warning",
+                icon: "refresh-cw"
+            },
+            noSimilarity: {
+                title: "ابتكار كامل وفريد",
+                desc: "الفكرة مبتكرة كلياً وجديدة على السوق! هذا يمنحك ميزة تنافسية كبيرة لرفع رصيدك في الابتكار; أظهر للجنة كيف تخدم فكرتك الوطن بنقاط عملية ومباشرة.",
+                type: "success",
+                icon: "lightbulb"
+            }
+        };
+
+        function updateSimulation() {
+            const teamSize = document.querySelector('input[name="team_size"]:checked').value;
+            const prototypeVal = parseInt(prototypeSlider.value);
+            const hasCode = document.querySelector('input[name="has_code"]:checked').value;
+            const regChallenge = document.querySelector('input[name="reg_challenge"]:checked').value;
+            const hasSimilarity = document.querySelector('input[name="has_similarity"]:checked').value;
+
+            // تحديث مؤشر النسبة على السلايدر
+            readinessPctLabel.innerText = prototypeVal + '%';
+
+            // حساب النسبة الرياضية التقديرية لجاهزية ملف العرض (Pitch Readiness)
+            let score = 50; // النسبة الأساسية
+
+            // الفريق
+            if (teamSize === 'multi') score += 10;
+            
+            // جاهزية النموذج
+            score += Math.round(prototypeVal * 0.25); // أثر حتى 25%
+
+            // البرمجة (الواجهات تمنح نقاط رائعة، ووجود نموذج مصمم يمنح نقاط ممتازة)
+            if (hasCode === 'yes') score += 5;
+            else score += 10; // تسهيل التركيز على الفكرة والواجهات يمنح فرصة أفضل للتقديم
+
+            // التشريعات والشركاء (في حال مواجهتها مع إضافة الحلول، تمنح قوة)
+            if (regChallenge === 'no') score += 10;
+            else score += 5; // يتطلب إيضاح خطة تشريعية لتعويض النقاط
+
+            // تكرار الأفكار
+            if (hasSimilarity === 'no') score += 10;
+            else score += 5;
+
+            // حصر النتيجة بين 0 و 100
+            score = Math.max(0, Math.min(100, score));
+
+            // تحديث واجهة قياس الـ SVG
+            gaugePercentage.innerText = score + '%';
+            
+            // محيط دائرة r=40 هو 2 * PI * 40 ≈ 251.2
+            const dashOffset = 251.2 - (251.2 * score) / 100;
+            gaugeCircle.setAttribute('stroke-dashoffset', dashOffset);
+
+            // تغيير لون الدائرة بناء على الجاهزية
+            if (score < 50) {
+                gaugeCircle.setAttribute('stroke', '#EF4444'); // أحمر
+            } else if (score < 80) {
+                gaugeCircle.setAttribute('stroke', '#8F8CD4'); // بنفسجي أمد
+            } else {
+                gaugeCircle.setAttribute('stroke', '#D17A4D'); // برتقالي أمد
+            }
+
+            // بناء وحقن قائمة التوصيات المخصصة والديناميكية
+            let activeRecs = [];
+
+            if (teamSize === 'single') activeRecs.push(allRecs.singleTeam);
+            else activeRecs.push(allRecs.multiTeam);
+
+            if (prototypeVal < 40) activeRecs.push(allRecs.lowPrototype);
+            else activeRecs.push(allRecs.highPrototype);
+
+            if (hasCode === 'yes') activeRecs.push(allRecs.hasCode);
+            else activeRecs.push(allRecs.noCode);
+
+            if (regChallenge === 'yes') activeRecs.push(allRecs.regChallenge);
+            else activeRecs.push(allRecs.noRegChallenge);
+
+            if (hasSimilarity === 'yes') activeRecs.push(allRecs.similarityWarning);
+            else activeRecs.push(allRecs.noSimilarity);
+
+            // تفريغ وحقن العناصر في واجهة المستخدم
+            recsContainer.innerHTML = '';
+            activeRecs.forEach(rec => {
+                let borderClass = 'border-slate-200';
+                let iconColor = 'text-slate-400';
+                let bgColor = 'bg-slate-50/50';
+
+                if (rec.type === 'warning') {
+                    borderClass = 'border-brand-coral/30';
+                    iconColor = 'text-brand-coral';
+                } else if (rec.type === 'success') {
+                    borderClass = 'border-emerald-500/20';
+                    iconColor = 'text-emerald-500';
+                } else if (rec.type === 'info') {
+                    borderClass = 'border-brand-lavender/30';
+                    iconColor = 'text-brand-lavender';
+                }
+
+                const recCard = document.createElement('div');
+                recCard.className = `${bgColor} ${borderClass} border p-4 rounded-xl flex items-start space-x-reverse space-x-3 transition hover:bg-slate-50`;
+                recCard.innerHTML = `
+                    <div class="flex-shrink-0 mt-0.5 ${iconColor}">
+                        <i data-lucide="${rec.icon}" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold text-brand-navy">${rec.title}</h5>
+                        <p class="text-[11px] text-slate-500 mt-1 leading-relaxed font-semibold">${rec.desc}</p>
+                    </div>
+                `;
+                recsContainer.appendChild(recCard);
+            });
+
+            // إعادة بناء أيقونات لوسيد لضمان عملها بشكل سليم
+            lucide.createIcons();
+        }
+
+        // إضافة مستمعي الأحداث لتحديث المحاكاة فورياً عند أي تغيير
+        prototypeSlider.addEventListener('input', updateSimulation);
+        readinessForm.addEventListener('change', updateSimulation);
+
+        // تشغيل أولي عند التحميل
+        updateSimulation();
+
+        // 4. منطق أكورديون الأسئلة الشائعة (FAQ)
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('.faq-icon');
+                
+                // إظهار أو إخفاء الإجابة
+                content.classList.toggle('hidden');
+                
+                // تدوير أيقونة السهم
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>
